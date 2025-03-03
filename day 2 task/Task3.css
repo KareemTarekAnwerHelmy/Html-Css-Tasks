@@ -1,0 +1,285 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    border: 2px solid black;
+    padding: 10px;
+    margin: 10px;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    text-align: center;
+    background-color: lightblue;
+    border: 2px solid black;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+nav {
+    background-color: blue;
+    color: white;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0;
+    margin: 0;
+}
+
+nav li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+nav li a:hover {
+    color: yellow;
+    text-decoration: underline;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+section {
+    flex: 1 1 70%; 
+    max-width: 100%; 
+    border: 2px solid black;
+    padding: 1rem;
+    margin: 0 auto;
+}
+
+article {
+    border: 2px solid black;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.article1 {
+    background-color: lightblue;
+}
+
+.article2 {
+    background-color: gray;
+}
+
+aside {
+    flex: 1 1 25%; 
+    max-width: 100%; 
+    align-items: center;
+    border: 2px solid black;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    background-color: #f4f4f4;
+}
+
+aside ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+aside li {
+    text-align: center;
+    border: 2px solid black;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+aside ul :nth-child(odd) {
+    background-color: lightgray;
+}
+
+aside ul :nth-child(even) {
+    background-color: lightblue;
+}
+
+footer {
+    text-align: center;
+    background-color: lightblue;
+    border: 2px solid black;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    main {
+        flex-direction: column;
+    }
+
+    section,
+    aside {
+        flex: 1 1 100%; 
+    }
+
+    section {
+        margin: 0; 
+    }
+}
+
+@media (max-width: 480px) {
+    nav li a {
+        font-size: 0.9rem;
+    }
+
+    aside li {
+        font-size: 0.8rem;
+    }
+
+    body {
+        padding: 5px;
+    }
+
+    footer {
+        padding: 0.5rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    border: 2px solid black;
+    padding: 10px 10px;
+    margin: 10px 10px;
+}
+
+header {
+    text-align: center;
+    background-color: lightblue;
+    border: 2px solid black;
+    padding: 10px 10px;
+    margin: 10px 10px;
+}
+
+nav {
+    background-color: blue;
+    color: white;
+    padding: 10px 10px;
+    margin: 10px 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 10px 0;
+}
+
+nav li a {
+    margin: 0 15px;
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    width: 100%;
+    display: flex;
+}
+
+section {
+    width: 85%;
+    border: 2px solid black;
+    padding: 10px 10px;
+    margin: 10px 10px;
+    display: inline-block;
+}
+
+article {
+    border: 2px solid black;
+    padding: 10px 10px;
+    margin: 10px 10px;
+}
+
+.article1 {
+    background-color: lightblue;
+}
+
+.article2 {
+    background-color: gray;
+}
+
+aside {
+    width: 13%;
+    align-items: center;
+    border: 2px solid black;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: #f4f4f4;
+}
+
+aside ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+aside li {
+    text-align: center;
+    border: 2px solid black;
+    padding: 10px;
+    font-size: 14px;
+    margin: 10px;
+}
+
+aside ul :nth-child(odd) {
+    background-color: lightgray;
+}
+
+aside ul :nth-child(even) {
+    background-color: lightblue;
+}
+
+footer {
+    text-align: center;
+    background-color: lightblue;
+    border: 2px solid black;
+    padding: 10px 10px;
+    margin: 10px 10px;
+} */
+
