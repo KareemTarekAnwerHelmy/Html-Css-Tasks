@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="task2.css">
+    <body>
+        <div class="controls">
+            <button onclick="startAnimation()">Start</button>
+            <button onclick="stopAnimation()">Stop</button>
+            <button onclick="pauseAnimation()">Pause</button>
+        </div>
+        
+        <div class="container">
+            <div class="shape"></div>
+        </div>
+    
+        <script>
+            const shape = document.querySelector('.shape');
+            
+            function startAnimation() {
+                shape.classList.add('animate');
+                shape.classList.remove('paused');
+            }
+            
+            function stopAnimation() {
+                shape.classList.remove('animate');
+                shape.classList.remove('paused');
+                shape.style.transform = '';
+                shape.style.backgroundColor = '#ed7d31';
+            }
+            
+            function pauseAnimation() {
+                shape.classList.add('paused');
+            }
+    
+            window.onload = stopAnimation;
+        </script>
+    </body>
+    </html>

@@ -1,0 +1,76 @@
+.controls {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    width: 100px;
+    padding: 10px;
+    background-color: #5b9bd5;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.container {
+    position: relative;
+    width: 1000px;
+    height: 1000px;
+}
+
+.shape {
+    width: 150px;
+    height: 100px;
+    position: absolute;
+    background-color: #ed7d31;
+    top: 0px;
+    left: 0px;
+    transition: transform 0.3s ease;
+}
+
+.shape:hover {
+    transform: scale(1.2);
+    animation-play-state: paused;
+}
+
+@keyframes moveSquare {
+    0% {
+        background-color: red;
+        left: 0px;
+        top: 0px;
+    }
+
+    25% {
+        background-color: yellow;
+        left: 800px;
+        top: 0px;
+    }
+
+    50% {
+        background-color: blue;
+        left: 800px;
+        top: 800px;
+    }
+
+    75% {
+        background-color: green;
+        left: 0px;
+        top: 800px;
+    }
+
+    100% {
+        background-color: red;
+        left: 0px;
+        top: 0px;
+    }
+}
+
+.animate {
+    animation: moveSquare 8s linear infinite;
+}
+
+.paused {
+    animation-play-state: paused;
+}
