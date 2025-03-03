@@ -1,0 +1,55 @@
+body{
+    background-image: url("back.jpg");
+}
+.container{
+    text-align: center;
+}
+.header{
+    font-weight: bold;
+}
+.header h1{
+    color: #82950a;
+}
+.header p{
+    color: #919646;
+}
+.row{
+    display: grid;
+    grid-auto-flow: column; 
+    gap: 10px;
+}
+.roow{
+    display: grid;
+    grid-auto-flow: column; 
+    gap: 10px;
+}
+/* .row{
+    display: block;
+} 
+.roow{
+    display: block;
+}
+.pic1{
+    display: inline-block;
+}
+.pic2{
+    display: inline-block;
+}
+.pic3{
+    display: inline-block;
+}
+.pic4{
+    display: inline-block;
+}
+.pic5{
+    display: inline-block;
+}
+.pic6{
+    display: inline-block;
+} */
+
+hr{
+    margin: auto;
+    border: 2px dotted #990000;
+    width: 90%;
+}
