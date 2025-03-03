@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Player</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="mainwrapper">
+        <div id="videowrapper">
+            <video id="myvideo" src="media/11.mp4" width="640" height="360"></video>
+        </div>
+        <div id="controlswrapper">
+            <div class="controls-section">
+                <button id="playpausebtn">Play</button>
+                <select id="sizeSelect">
+                    <option value="">Select Size</option>
+                    <option value="small">Small</option>
+                    <option value="medium">Medium</option>
+                    <option value="large">Large</option>
+                    <option value="fullscreen">Fullscreen</option>
+                </select>
+            </div>
+            <div class="controls-section">
+                <label><input type="checkbox" id="muteCheckbox"> Mute</label>
+                <label><input type="checkbox" id="loopCheckbox"> Loop</label>
+            </div>
+            <div class="controls-section">
+                <input type="range" min="0" max="1" step="0.1" value="0.5" id="volumeRange">
+            </div>
+            <div class="controls-section">
+                <input type="range" min="0" max="100" step="any" value="0" id="seekbar">
+            </div>
+            <div class="controls-section">
+                <button id="forwardbtn" title="forward">>></button>
+                <button id="backwardbtn" title="backward"><<</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

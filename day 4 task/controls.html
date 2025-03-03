@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>controls</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      text-align: center;
+    }
+
+    .video-container {
+      max-width: 640px;
+      margin: 50px auto;
+      background-color: black;
+      position: relative;
+    }
+
+    video {
+      width: 100%;
+    }
+
+    .controls {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 10px;
+    }
+
+    .play-pause-btn {
+      background: #fff;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-right: 15px;
+    }
+
+    .seekbar {
+      width: 50%;
+      margin: 0 15px;
+    }
+
+    .quality-selector, .subtitle-selector {
+      background: #fff;
+      border: none;
+      padding: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      margin-left: 10px;
+    }
+
+    .subtitle-selector option {
+      font-size: 14px;
+    }
+
+  </style>
+</head>
+<body>
+
+<h1>Video Player</h1>
+
+<div class="video-container">
+  <video id="myVideo" preload="metadata" style="width: 100%;">
+    <source src="videos/7.mp4" type="video/mp4">
+    <source src="video.webm" type="video/webm">
+    <source src="video.ogv" type="video/ogg">
+  </video>
+
+  <div class="controls">
+    <button class="play-pause-btn" id="playPauseBtn">Play</button>
+    <input type="range" class="seekbar" id="seekBar" value="0" max="100" step="1">
+    <select class="quality-selector" id="qualitySelector">
+      <option value="videos/7.mp4">720p</option>
+      <option value="videos/7.mp4">480p</option>
+    </select>
+    <select class="subtitle-selector" id="subtitleSelector">
+      <option value="none">No Subtitles</option>
+      <option value="subtitles_en.vtt">English</option>
+      <option value="subtitles_es.vtt">Spanish</option>
+    </select>
+  </div>
+</div>
+
+<script>
+  const video = document.getElementById("myVideo");
+  const playPauseBtn = document.getElementById("playPauseBtn");
+  const seekBar = document.getElementById("seekBar");
+  const qualitySelector = document.getElementById("qualitySelector");
+  const subtitleSelector = document.getElementById("subtitleSelector");
+
+  let isPlaying = false;
+
+  playPauseBtn.addEventListener('click', function() {
+    if (isPlaying) {
+      video.pause();
+      playPauseBtn.innerHTML = 'Play';
+    } else {
+      video.play();
+      playPauseBtn.innerHTML = 'Pause';
+    }
+    isPlaying = !isPlaying;
+  });
+
+  video.addEventListener('timeupdate', function() {
+    const value = (video.currentTime / video.duration) * 100;
+    seekBar.value = value;
+  });
+
+  seekBar.addEventListener('input', function() {
+    video.currentTime = (seekBar.value / 100) * video.duration;
+  });
+
+  qualitySelector.addEventListener('change', function() {
+    const selectedQuality = qualitySelector.value;
+    const newSource = document.createElement('source');
+    newSource.src = selectedQuality;
+    newSource.type = "video/mp4"; 
+    video.innerHTML = ''; 
+    video.appendChild(newSource); 
+    video.load(); 
+    video.play(); 
+  });
+
+  subtitleSelector.addEventListener('change', function() {
+    const selectedSubtitle = subtitleSelector.value;
+    const track = video.querySelector('track');
+    if (selectedSubtitle === 'none') {
+      track && track.remove(); 
+    } else {
+      if (!track) {
+        const newTrack = document.createElement('track');
+        newTrack.src = selectedSubtitle;
+        newTrack.kind = 'subtitles';
+        newTrack.srclang = 'en'; 
+        newTrack.label = selectedSubtitle.includes('en') ? 'English' : 'Spanish';
+        video.appendChild(newTrack);
+      }
+    }
+  });
+</script>
+
+</body>
+</html>
